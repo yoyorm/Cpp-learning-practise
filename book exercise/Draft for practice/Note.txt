@@ -1,0 +1,7 @@
+| 类型           | 格式示例                                       | 场景      |
+| ------------ | ------------------------------------------ | ------- |
+| **feat**     | `feat: add LeetCode 001 TwoSum`            | 新增功能/题目 |
+| **fix**      | `fix: boundary check in array1.cpp`        | 修复 Bug  |
+| **docs**     | `docs: update README with build steps`     | 修改文档    |
+| **refactor** | `refactor: split utils into separate file` | 代码整理    |
+| **chore**    | `chore: add .gitignore for VS build`       | 工具/配置   |
