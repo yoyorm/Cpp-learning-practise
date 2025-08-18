@@ -1,1 +1,2 @@
-# cppLearingWork
+大一c++学习仓库
+鹰角网络一定要等我呀QWQ 加油！
