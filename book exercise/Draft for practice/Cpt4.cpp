@@ -100,12 +100,12 @@ using namespace std;
 
 //结构struct
 
-struct inflatable
-{
-	char name[20];
-	float volume = 0;
-	double price = 0;
-};
+//struct inflatable
+//{
+//	char name[20];
+//	float volume = 0;
+//	double price = 0;
+//};
 //结构的创建和使用
 //int main()
 //{
@@ -137,21 +137,33 @@ struct inflatable
 
 
 //共用体的创建
-union one4all
-{
-	int intval;
-	double doubleval;
-};
+//union one4all
+//{
+//	int intval;
+//	double doubleval;
+//};
+//int main()
+//{
+//	one4all test;
+//	test.doubleval = 1.88;
+//	cout << test.doubleval;
+//	test.intval = 5;
+//	//cout <<"double: " << test.doubleval;
+//	//共用体同一时间只能存储一种类型数据
+//	//新的数据类型会占用旧类型的空间
+//	cout <<"int: " << test.intval;
+//
+//	return 0;
+//}
+
 int main()
 {
-	one4all test;
-	test.doubleval = 1.88;
-	cout << test.doubleval;
-	test.intval = 5;
-	//cout <<"double: " << test.doubleval;
-	//共用体同一时间只能存储一种类型数据
-	//新的数据类型会占用旧类型的空间
-	cout <<"int: " << test.intval;
-
+	int x = 7;
+	int* p_x = new int;
+	*p_x=7;
+	cout << x<<"   "<<p_x << endl << sizeof(x) << "  " << sizeof(p_x);
+	delete p_x;
 	return 0;
+
+
 }
