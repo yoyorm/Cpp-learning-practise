@@ -1,11 +1,11 @@
 #include<iostream>
 #include<cstring>
 #include<string>
+#include<vector>
 using namespace std;
 #pragma warning(disable:4996)//屏蔽 strcpy 报错
 //int main()
 //{
-//	using namespace std;
 //	cout << "please type the pocket number you want:";
 //	int packet[3] = { 1,2,3 };
 //	int cost[3] = {10,20,30};
@@ -15,13 +15,14 @@ using namespace std;
 //	return 0;
 //}
 
+
+
 //数组中使用字符串
 //int main()
 //{
-//	using namespace std;
 //	const int size = 10;
 //	char name1[size];
-//	char name2[size]="yoyorm";
+//	char name2[size]="Yo yo rm";
 //	cout << "my name is " << name2 << endl;
 //	cout << "What's your name?\n";
 //	cin >> name1;
@@ -41,7 +42,6 @@ using namespace std;
 //
 //int main()
 //{
-//	using namespace std;
 //	const int ArSize = 20;
 //	char name[ArSize];
 //	char dessert[ArSize];
@@ -57,7 +57,6 @@ using namespace std;
 //
 //int main()
 //{
-//	using namespace std;
 //	int year = 0;
 //	char name[20];
 //	cout << "type your year:\n";
@@ -70,10 +69,11 @@ using namespace std;
 //}
 
 
+
+
 //使用 string 类型
 //int main()
 //{
-//	using namespace std;
 //	cout << "打印两串字母，然后自动相加:\n";
 //	/*char x[20];
 //	char y[20];
@@ -98,7 +98,6 @@ using namespace std;
 
 
 //结构struct
-
 //struct inflatable
 //{
 //	char name[20];
@@ -118,6 +117,7 @@ using namespace std;
 
 
 
+
 //结构数组的创建和使用
 //int main() 
 //{
@@ -131,6 +131,7 @@ using namespace std;
 //	cout << guest[0].volume + guest[1].volume;
 //	return 0;
 //}
+
 
 
 
@@ -183,29 +184,92 @@ using namespace std;
 
 
 //new 使用指针并创建新地址，并且复制值
+//int main()
+//{
+//	char animal[20] = "bear";
+//	const char* bird = "wren";
+//	char* ps=animal;
+//
+//	cout<< animal << " and ";
+//	cout << bird << "\n";
+//
+//	cout << "Enter a kind of animal: ";
+//	cin >> animal;
+//	
+//	cout << ps<<"!\n";
+//	cout << "Before strcpy:\n";
+//	cout << ps << " is at " << (int*)ps<<endl;
+//
+//	ps = new char[strlen(animal) + 1];
+//	strncpy(ps, animal, strlen(animal) + 1);
+//
+//	cout << "After strcpy:\n";
+//	cout << ps << " is at " << (int*)ps << endl;
+//	delete[] ps;
+//	return 0;
+//}
+
+
+
+//动态结构
+//struct inflatable
+//{
+//	char name[20];
+//	float volume = 0;
+//	double price = 0;
+//};
+//
+//int main()
+//{
+//	inflatable* ps = new inflatable;
+//	cout << "Enter the name: ";
+//	cin.getline(ps->name,20);
+//	cout << "Enter the volume: ";
+//	cin >> (*ps).volume;
+//	cout << "Enter the price: ";
+//	cin >> (*ps).price;
+//	cout << "Name: " << ps->name<<endl;
+//	cout << "Volume: " << ps->volume << endl;
+//	cout << "Price: " << ps->price << endl;
+//	delete ps;
+//	return 0;
+//}
+
+
+
+//自动分配大小的字符指针
+//char* getname()
+//{
+//	char temp[50];
+//	cout << "请输入内容：\n";
+//	cin >> temp;
+//	char* sn = new char[strlen(temp) + 1];
+//	strncpy(sn, temp, strlen(temp) + 1);
+//	return sn;
+//}
+//int main()
+//{
+//	char* name = getname();
+//	cout << "你存储的内容是：\n";
+//	cout << name;
+//	delete name;
+//	return 0;
+//}
+
+
+
+//指针的指针
+struct house { int num; };
 int main()
 {
-	char animal[20] = "bear";
-	const char* bird = "wren";
-	char* ps=animal;
-
-	cout<< animal << " and ";
-	cout << bird << "\n";
-
-	cout << "Enter a kind of animal: ";
-	cin >> animal;
-	
-	cout << ps<<"!\n";
-	cout << "Before strcpy:\n";
-	cout << ps << " is at " << (int*)ps<<endl;
-
-	ps = new char[strlen(animal) + 1];
-	strncpy(ps, animal, strlen(animal) + 1);
-
-	cout << "After strcpy:\n";
-	cout << ps << " is at " << (int*)ps << endl;
-	delete[] ps;
+	house x, y, z;
+	x.num = 101;
+	y.num = 202;
+	z.num = 303;
+	house* ph[3] = { &x,&y,&z };
+	house** pph = ph;
+	cout << (*pph)->num<<endl;
+	cout << (*(*(pph+1))).num;
 	return 0;
-
-
 }
+
