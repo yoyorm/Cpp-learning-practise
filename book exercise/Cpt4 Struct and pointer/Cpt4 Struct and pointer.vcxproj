@@ -123,6 +123,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="10 array grade.cpp" />
     <ClCompile Include="1grade.cpp" />
     <ClCompile Include="3 4 strcat.cpp" />
     <ClCompile Include="5 6 struct Candy.cpp" />

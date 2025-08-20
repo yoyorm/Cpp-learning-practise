@@ -24,5 +24,8 @@
     <ClCompile Include="5 6 struct Candy.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="10 array grade.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
