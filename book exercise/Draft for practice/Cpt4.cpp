@@ -259,17 +259,17 @@ using namespace std;
 
 
 //Ö¸ÕëµÄÖ¸Õë
-struct house { int num; };
-int main()
-{
-	house x, y, z;
-	x.num = 101;
-	y.num = 202;
-	z.num = 303;
-	house* ph[3] = { &x,&y,&z };
-	house** pph = ph;
-	cout << (*pph)->num<<endl;
-	cout << (*(*(pph+1))).num;
-	return 0;
-}
+//struct house { int num; };
+//int main()
+//{
+//	house x, y, z;
+//	x.num = 101;
+//	y.num = 202;
+//	z.num = 303;
+//	house* ph[3] = { &x,&y,&z };
+//	house** pph = ph;
+//	cout << (*pph)->num<<endl;
+//	cout << (*(*(pph+1))).num;
+//	return 0;
+//}
 
