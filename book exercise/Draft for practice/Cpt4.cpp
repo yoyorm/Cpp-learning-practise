@@ -2,6 +2,7 @@
 #include<cstring>
 #include<string>
 using namespace std;
+#pragma warning(disable:4996)//屏蔽 strcpy 报错
 //int main()
 //{
 //	using namespace std;
@@ -30,12 +31,9 @@ using namespace std;
 //	cout << "your name is in an array that owns " << sizeof(name1) << " bytes.\n";
 //	name2[4] = '\0';
 //	cout << "my first 4 letters are " << name2;
-//
-//
-//
-//
 //	return 0;
 //}
+
 
 
 //使用cin.getline/get()
@@ -53,7 +51,6 @@ using namespace std;
 //	cout << "Enter your favorite dessert:\n";
 //	cin.get(dessert,ArSize).get();
 //	cout << dessert << "for you, " << name;
-//
 //	return 0;
 //}
 
@@ -98,6 +95,8 @@ using namespace std;
 //}
 
 
+
+
 //结构struct
 
 //struct inflatable
@@ -114,7 +113,6 @@ using namespace std;
 //	cout << "Expand your guest list with " << guest.name;
 //	cout << " and " << pal.name;
 //	cout << endl << "you can have both for $" << guest.price + pal.price<<"!\n";
-//
 //	return 0;
 //}
 
@@ -156,13 +154,57 @@ using namespace std;
 //	return 0;
 //}
 
+
+
+//指针和动态数组
+//int main()
+//{
+//	int* p3 = new int[3];
+//	p3[0] = 1;
+//	p3[1] = 2;
+//	p3[2] = 3;
+//	cout << p3[0]<<endl;
+//	p3 = p3+2;//指针的动态数组可以直接运算来进行移动 而静态的普通数组是常量，可以运算，但不能被赋值
+//	cout << "NOW: " << p3[-1];
+//	p3 = p3 - 2; //要将指针移动回原来的位置再释放
+//	delete[] p3;
+//	return  0;
+//}
+
+//int main()
+//{
+//	int x[5] = { 1,2,3,4,5 };
+//	int(*p_x)[5] = &x;//可以使用&数组名 来将整个地址赋予给一个指针
+//	cout << (*p_x)[3];
+//	return 0;
+//
+//}
+	
+
+
+//new 使用指针并创建新地址，并且复制值
 int main()
 {
-	int x = 7;
-	int* p_x = new int;
-	*p_x=7;
-	cout << x<<"   "<<p_x << endl << sizeof(x) << "  " << sizeof(p_x);
-	delete p_x;
+	char animal[20] = "bear";
+	const char* bird = "wren";
+	char* ps=animal;
+
+	cout<< animal << " and ";
+	cout << bird << "\n";
+
+	cout << "Enter a kind of animal: ";
+	cin >> animal;
+	
+	cout << ps<<"!\n";
+	cout << "Before strcpy:\n";
+	cout << ps << " is at " << (int*)ps<<endl;
+
+	ps = new char[strlen(animal) + 1];
+	strncpy(ps, animal, strlen(animal) + 1);
+
+	cout << "After strcpy:\n";
+	cout << ps << " is at " << (int*)ps << endl;
+	delete[] ps;
 	return 0;
 
 
