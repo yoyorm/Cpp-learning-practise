@@ -2,6 +2,12 @@
 #include<string>
 #include<vector>
 using namespace std;
+//输出指定行数的图案
+//....*
+//...**
+//..***
+//.****
+//*****
 
 int main()
 {
