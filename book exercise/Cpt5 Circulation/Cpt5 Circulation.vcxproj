@@ -125,6 +125,7 @@
   <ItemGroup>
     <ClCompile Include="1 3 sum.cpp" />
     <ClCompile Include="4 investment.cpp" />
+    <ClCompile Include="7 car struct.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

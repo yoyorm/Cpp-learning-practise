@@ -20,3 +20,25 @@ using namespace std;
 //	cout << "x = " << x << "\t" << "y = " << y;
 //	return 0;
 //}
+
+
+
+//对每个月的销售额求和并且打印
+//int main()
+//{
+//	const int size = 12;
+//	int sales[12];
+//	char month[12][5] = { "Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sept","Oct","Nov","Dec" };
+//	for (int i = 0; i < size; i++)
+//	{
+//		cout << "Enter " << month[i] << " 's sales : ";
+//		cin >> sales[i];
+//	}
+//	int result = 0;
+//	for (int i = 0; i < size; i++)
+//	{
+//		result += sales[i];
+//	}
+//	cout << "The whole sales = " << result;
+//	return 0;
+//}
