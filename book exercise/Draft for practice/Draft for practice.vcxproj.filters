@@ -18,7 +18,7 @@
     <ClCompile Include="Cpt4.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="Cpt5.cpp">
+    <ClCompile Include="Cpt5 6.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
