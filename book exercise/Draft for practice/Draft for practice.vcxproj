@@ -126,6 +126,9 @@
     <ClCompile Include="Cpt4.cpp" />
     <ClCompile Include="Cpt5 6.cpp" />
   </ItemGroup>
+  <ItemGroup>
+    <Text Include="test.txt" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

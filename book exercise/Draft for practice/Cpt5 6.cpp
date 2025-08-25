@@ -190,38 +190,100 @@ using namespace std;
 //}
 
 
-//获得成绩并计算平均值，如果输入类型错误则要求重新输入
+
+
+//获得成绩并计算平均值，如果输入类型错误则要求重新输入,最后将成绩输出到一个创建的text文件中
+#include<fstream>
+//int main()
+//{
+//	const int size = 5;
+//	double grade[size];
+//	int i = 0;
+//	ofstream outFile;
+//	outFile.open("temp.txt");
+//	while (i < size)
+//	{
+//		
+//		cout << "Grade #" << i + 1 << " :";
+//		if (cin >> grade[i])
+//		{
+//			i++;
+//		}
+//		else
+//		{
+//			cout << "Please enter the right num!\n";
+//			cin.clear();
+//			cin.ignore(numeric_limits<streamsize>::max(),'\n');
+//			//while(getchar()!='\n')
+//			//{continue;}
+//
+//		}
+//	}
+//	cout << endl;
+//	double total = 0;
+//	for (int j = 0; j < size; j++)
+//	{
+//		cout << "Grade #" << j + 1 << " " << grade[j]<<endl;
+//		outFile << "Grade #" << j + 1 << " " << grade[j] << endl;
+//		total += grade[j];
+//	}
+//	cout << "Ave = " << total /i ;
+//	outFile << "Ave = " << total / i;
+//	outFile.close();
+//	return 0;
+//}
+
+
+
+
+
+//读取用户指定的文件并且获取数据
 int main()
 {
-	const int size = 5;
-	double grade[size];
-	int i = 0;
-	
-	while (i < size)
+	const int SIZE = 60;
+	char filename[SIZE];
+	ifstream inFile;
+	cout << "Enter the name of the data file: ";
+	cin.getline(filename, SIZE);
+	inFile.open(filename);
+	if (!inFile.is_open())
+	{
+		cout << "Could not open the file " << filename<<" !"<<endl;
+		cout << "Program terminating...\n";
+		exit(EXIT_FAILURE);
+	}
+	double value;
+	double sum=0;
+	int count=0;
+	inFile >> value;
+	while (inFile.good())
 	{
 		
-		cout << "Grade #" << i + 1 << " :";
-		if (cin >> grade[i])
-		{
-			i++;
-		}
-		else
-		{
-			cout << "Please enter the right num!\n";
-			cin.clear();
-			cin.ignore(numeric_limits<streamsize>::max(),'\n');
-			//while(getchar()!='\n')
-			//{continue;}
-
-		}
+	
+		++count;
+		sum += value;
+		inFile >> value;
 	}
-	cout << endl;
-	double total = 0;
-	for (int j = 0; j < size; j++)
+	if (inFile.eof())
 	{
-		cout << "Grade #" << j + 1 << " " << grade[j]<<endl;
-		total += grade[j];
+		cout << "End of file reached. \n";
 	}
-	cout << "Ave = " << total /i ;
+	else if (inFile.fail())
+	{
+		cout << "Input terminated for unknown reason.\n";
+	}
+
+	if (count == 0)
+	{
+		cout << "No data processed. ";
+	}
+	else
+	{
+		cout << "Items read: " << count << endl;
+		cout << "Sum: " << sum << endl;
+		cout << "Average: " << sum / count << endl;
+	}
+	inFile.close();
 	return 0;
+
 }
