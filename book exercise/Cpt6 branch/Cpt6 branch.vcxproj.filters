@@ -30,5 +30,11 @@
     <ClCompile Include="5 tvarp.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="6 input.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="donation.txt" />
   </ItemGroup>
 </Project>

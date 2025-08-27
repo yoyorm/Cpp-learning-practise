@@ -128,6 +128,10 @@
     <ClCompile Include="3 menu.cpp" />
     <ClCompile Include="4 menu2.cpp" />
     <ClCompile Include="5 tvarp.cpp" />
+    <ClCompile Include="6 input.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="donation.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
