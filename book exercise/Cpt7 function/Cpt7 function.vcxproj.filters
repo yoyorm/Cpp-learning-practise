@@ -21,5 +21,8 @@
     <ClCompile Include="2 golf.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="3 box.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
