@@ -24,5 +24,8 @@
     <ClCompile Include="3 box.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="5 recursion.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
