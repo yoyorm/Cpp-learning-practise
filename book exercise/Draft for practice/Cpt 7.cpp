@@ -98,41 +98,74 @@ using namespace std;
 //| | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | |
 //|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
 
-void subdivide(char ch[], int first, int end, int times);
-const int len = 66;
-const int times = 6;
+//void subdivide(char ch[], int first, int end, int times);
+//const int len = 66;
+//const int times = 6;
+//int main()
+//{
+//	char ruler[len];
+//	ruler[len - 1] = '\0';
+//	ruler[0] = ruler[len - 2] = '|';
+//	
+//
+//	for (int i = 1; i < len - 2; i++)
+//	{
+//		ruler[i] = ' ';
+//	}
+//	cout << ruler<<endl;
+//	for (int i=1; i <= times; i++)
+//	{
+//		subdivide(ruler, 0, len - 2,i);
+//		cout << ruler<<endl;
+//		for (int k = 1; k < len - 2; k++)
+//		{
+//			ruler[k] = ' ';
+//		}
+//	}
+//	return 0;
+//}
+//
+//void subdivide(char ch[],int first,int end,int times)
+//{
+//	if (times == 0)
+//		return;
+//	int middle = (first + end) / 2;
+//	ch[middle] = '|';
+//	subdivide(ch, first, middle,times-1);
+//	subdivide(ch, middle, end,times-1);	
+//}
+
+
+
+
+
+//使用函数指针，可以在函数形参中加入函数指针，从而在函数中使用其他函数
+void estimate(int x, double(*pf)(int));
+double betsy(int x);
+double pam(int x);
 int main()
 {
-	char ruler[len];
-	ruler[len - 1] = '\0';
-	ruler[0] = ruler[len - 2] = '|';
-	
-
-	for (int i = 1; i < len - 2; i++)
-	{
-		ruler[i] = ' ';
-	}
-	cout << ruler<<endl;
-	for (int i=1; i <= times; i++)
-	{
-		subdivide(ruler, 0, len - 2,i);
-		cout << ruler<<endl;
-		for (int k = 1; k < len - 2; k++)
-		{
-			ruler[k] = ' ';
-		}
-	}
+	int code;
+	cout << "How many line of code do you need?\n";
+	cin >> code;
+	cout << "Here' Betsy's estimate:\n";
+	estimate(code, betsy);
+	cout << "Here' Pam's estimate:\n";
+	estimate(code, pam);
 	return 0;
 }
 
-void subdivide(char ch[],int first,int end,int times)
+double betsy(int x)
 {
-	if (times == 0)
-		return;
-	int middle = (first + end) / 2;
-	ch[middle] = '|';
-	subdivide(ch, first, middle,times-1);
-	subdivide(ch, middle, end,times-1);	
+	return x * 0.05;
+}
+double pam(int x)
+{
+	return x * 0.03+0.0004*x*x;
 }
 
-
+void estimate(int x,double(*pf)(int))
+{
+	cout << x << "lines of code will take ";
+	cout << (*pf)(x) << " hours.\n";
+}
