@@ -140,32 +140,81 @@ using namespace std;
 
 
 //使用函数指针，可以在函数形参中加入函数指针，从而在函数中使用其他函数
-void estimate(int x, double(*pf)(int));
-double betsy(int x);
-double pam(int x);
+//void estimate(int x, double(*pf)(int));
+//double betsy(int x);
+//double pam(int x);
+//int main()
+//{
+//	int code;
+//	cout << "How many line of code do you need?\n";
+//	cin >> code;
+//	cout << "Here' Betsy's estimate:\n";
+//	estimate(code, betsy);
+//	cout << "Here' Pam's estimate:\n";
+//	estimate(code, pam);
+//	return 0;
+//}
+//
+//double betsy(int x)
+//{
+//	return x * 0.05;
+//}
+//double pam(int x)
+//{
+//	return x * 0.03+0.0004*x*x;
+//}
+//
+//void estimate(int x,double(*pf)(int))
+//{
+//	cout << x << "lines of code will take ";
+//	cout << (*pf)(x) << " hours.\n";
+//}
+
+
+
+//函数指针，函数指针数组，指向整个函数指针数组的指针
+const double* f1(const double* ar, int n);
+const double* f2(const double* ar, int n);
+const double* f3(const double* ar, int n);
 int main()
 {
-	int code;
-	cout << "How many line of code do you need?\n";
-	cin >> code;
-	cout << "Here' Betsy's estimate:\n";
-	estimate(code, betsy);
-	cout << "Here' Pam's estimate:\n";
-	estimate(code, pam);
-	return 0;
-}
+	double av[3] = { 1112.3,1542.6,2227.9 };
+	const double* (*p1)(const double*, int) = f1;
+	auto p2 = f2;
+	cout << "Using pointers to function.\n";
+	cout << "Address Value\n";
+	cout << (*p1)(av, 3) << ": " << *(*p1)(av, 3) << endl;
+	cout << p2(av, 3) << ": " << *p2(av, 3) << endl;
 
-double betsy(int x)
-{
-	return x * 0.05;
-}
-double pam(int x)
-{
-	return x * 0.03+0.0004*x*x;
-}
 
-void estimate(int x,double(*pf)(int))
+
+	const double* (*pa[3])(const double*, int) = { f1,f2,f3 };
+	cout << "\nUsing an array of pointers to function.\n";
+	cout << "Address Value\n";
+	for (int i = 0; i < 3; i++)
+	{
+		cout << pa[i](av, 3) << ": " << *(*pa[i])(av, 3) << endl;
+	}
+
+	cout << "\nUsing pointers to an array of pointer\n";
+	cout << "Address Value\n";
+	auto pc = &pa;
+	cout << (*pc)[0](av, 3) << ": " << *(*pc)[0](av, 3) << endl;
+	const double* (*(*pd)[3])(const double*, int) = &pa;
+	const double* pdb = (*pd)[1](av, 3);
+	cout<<pdb<<": "<<(*pdb)<<endl;
+	cout << (*pc)[2](av, 3) << ": " << *(*pc)[2](av, 3) << endl;
+
+}
+const double* f1(const double* ar, int n)
 {
-	cout << x << "lines of code will take ";
-	cout << (*pf)(x) << " hours.\n";
+	return(ar);
+}
+const double* f2(const double* ar, int n)
+{
+	return(ar+1);
+}
+const double* f3(const double* ar, int n)
+{
+	return(ar+2);
 }
