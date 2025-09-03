@@ -127,6 +127,8 @@
     <ClCompile Include="2 golf.cpp" />
     <ClCompile Include="3 box.cpp" />
     <ClCompile Include="5 recursion.cpp" />
+    <ClCompile Include="6 fill_array.cpp" />
+    <ClCompile Include="10 calculFunction.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
