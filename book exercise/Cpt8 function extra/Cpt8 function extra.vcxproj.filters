@@ -18,5 +18,8 @@
     <ClCompile Include="1 print func.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="2 Candybar.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
