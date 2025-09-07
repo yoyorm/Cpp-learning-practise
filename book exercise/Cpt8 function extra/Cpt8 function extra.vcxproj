@@ -125,6 +125,7 @@
   <ItemGroup>
     <ClCompile Include="1 print func.cpp" />
     <ClCompile Include="2 Candybar.cpp" />
+    <ClCompile Include="3 toupper.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
