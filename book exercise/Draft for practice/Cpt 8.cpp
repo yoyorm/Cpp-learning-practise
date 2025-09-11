@@ -31,23 +31,44 @@ using namespace std;
 //}
 
 
-
+//使用函数的重载，截取字符或者数字的前几位
 char* cutch(const char ch[], int pos);
+int cutch(int num, int pos);
 const int Arsize = 50;
 int main()
 {
 	char sample[Arsize];
 	int cut_pos = 1;
-	cout << "Enter a sentence:";
-	cin >> sample;
-	cout << "Enter the number to cut:";
-	cin >> cut_pos;
-	if (cut_pos <= 0)
-		return -1;
-	char* result;
-	result=cutch(sample, cut_pos);
-	cout << "\n" << result;
-	delete[] result;
+	int choice = 0;
+	int number;
+	cout << "Choose:\n1)number\t2)string\n";
+	cin >> choice;
+	switch (choice)
+	{
+	case 1:{
+		cout << "Enter a number:";
+		cin >> number;
+		cout << "Enter the number to cut:";
+		cin >> cut_pos;
+		if (cut_pos <= 0)
+			return -1;
+		cout << "\n" << cutch(number, cut_pos);
+		break;
+	}
+	case 2: {
+		cout << "Enter a sentence:";
+		cin >> sample;
+		cout << "Enter the number to cut:";
+		cin >> cut_pos;
+		if (cut_pos <= 0)
+			return -1;
+		char* result = cutch(sample, cut_pos);
+		cout << "\n" << cutch(sample, cut_pos);
+		delete[] result;
+		break;
+	}
+	}
+	
 
 	return 0;
 }
@@ -63,4 +84,25 @@ char* cutch(const char ch[], int pos = 1)
 	tempp[pos] = '\0';
 	
 	return tempp;
+}
+
+int cutch(int num, int pos = 1)
+{
+	int num2 = num;
+	int size = 1;
+	while ((num /= 10) >= 1)
+	{
+		size++;
+	}
+	if (pos > size)
+		return num2;
+	else
+	{
+		for (int i = size; i > pos; i--)
+		{
+			num2 /= 10;
+			
+		}
+		return num2;
+	}
 }
