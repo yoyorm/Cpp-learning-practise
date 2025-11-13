@@ -111,7 +111,7 @@ using namespace std;
 //}
 
 
-//函数模板的创建
+//函数模板的创建 和 函数模板的重载
 template<typename T>
 void Swap(T& a, T& b)
 {
@@ -119,16 +119,27 @@ void Swap(T& a, T& b)
 	a = b;
 	b = temp;
 }
+template<typename T>
+void Swap(T a[], T b[],int i)
+{
+	T temp = a[i];
+	a[i] = b[i];
+	b[i] = temp;
+}
 
 int main()
 {
-	
+
 	int x = 12, y = 9;
+	int a[2] = { 1,2 }, b[2] = { 3,4 };
 	cout << "Origin: " << "\nx = " << x << "\ty = " << y << endl;
 	Swap(x, y);
-	cout << "After swap: " << "\nx = " << x << "\ty = " << y<<endl;
+	cout << "After swap: " << "\nx = " << x << "\ty = " << y << endl;
 	double i = 5.5, j = 8.2;
 	cout << "Origin: " << "\ni = " << i << "\tj = " << j << endl;
 	Swap(i, j);
 	cout << "After swap: " << "\ni = " << i << "\tj = " << j << endl;
+	cout << "Origin: " << "\na[1] = " << a[1] << "\tb[1] = " << b[1] << endl;
+	Swap(a, b, 1);
+	cout << "After swap: " << "\na[1] = " << a[1] << "\tb[1] = " << b[1] << endl;
 }
