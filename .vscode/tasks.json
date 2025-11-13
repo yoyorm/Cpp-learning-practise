@@ -1,0 +1,29 @@
+{
+    "tasks": [
+        {
+            "type": "cppbuild",
+            "label": "C/C++: g++.exe 生成活动文件",
+            "command": "C:\\msys64\\ucrt64\\bin\\g++.exe",
+            "args": [
+                "-fdiagnostics-color=always",
+                "-g",
+                "point.cpp",
+                "main.cpp",
+                "-o",
+                "pointMain.exe"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}\\classAttempt\\point"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "detail": "编译项目：point"
+        }
+    ],
+    "version": "2.0.0"
+}
