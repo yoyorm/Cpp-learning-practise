@@ -15,7 +15,7 @@ int main()
     point p2(x, y);
 
     cout<<"输出Point坐标之和:"<<endl;
-    point p3 = p1.add(p1, p2);
+    point p3 = p1+p2;
     p3.print();
 
     cout<<"输出Point坐标之距离:"<<endl;
